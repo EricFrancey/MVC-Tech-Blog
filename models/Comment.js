@@ -23,10 +23,10 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    book_id: {
+    tech_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'book',
+        model: 'tech',
         key: 'id',
       },
     },

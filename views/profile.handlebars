@@ -11,12 +11,12 @@
 
     <form class='form new-project-form'>
       <div class='form-group'>
-        <label for='book-name'>Blog post title:</label>
-        <input class='form-input' type='text' id='book-name' name='book-name' />
+        <label for='tech-name'>Blog post title:</label>
+        <input class='form-input' type='text' id='tech-name' name='tech-name' />
       </div>
       <div class='form-group'>
-        <label for='book-desc'>Thoughts:</label>
-        <textarea class='form-input' id='book-desc' name='book-desc'></textarea>
+        <label for='tech-desc'>Thoughts:</label>
+        <textarea class='form-input' id='tech-desc' name='tech-desc'></textarea>
       </div>
 
       <div class='form-group'>
@@ -25,18 +25,18 @@
     </form>
   </div>
 
-  {{#if books.length}}
+  {{#if techs.length}}
     <div class='project-list'>
-      <h3>My Current Books:</h3>
-      {{#each books as |book|}}
+      <h3>My Current Posts:</h3>
+      {{#each techs as |tech|}}
         <div class='row mb-2'>
           <div class='col-md-8'>
-            <h4><a href='/book/{{book.id}}'>{{book.title}}</a></h4>
+            <h4><a href='/tech/{{tech.id}}'>{{tech.title}}</a></h4>
           </div>
           <div class='col-md-4'>
             <button
               class='btn btn-sm btn-danger'
-              data-id='{{book.id}}'
+              data-id='{{tech.id}}'
             >DELETE</button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, Comment } = require('../../models');
+const { Tech, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
@@ -17,19 +17,19 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const bookData = await Book.destroy({
+    const techData = await Tech.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!bookData) {
+    if (!techData) {
       res.status(404).json({ message: 'Not found' });
       return;
     }
 
-    res.status(200).json(bookData);
+    res.status(200).json(techData);
   } catch (err) {
     res.status(500).json(err);
   }

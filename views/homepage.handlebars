@@ -1,30 +1,30 @@
 <!-- Loop over each object in the projects array -->
-{{#each books as |book|}}
+{{#each techs as |tech|}}
   <div class='card mt-5 text-justify p-3 bg-dark'>
     <div class='p-5 text-light'>
       <h2>
 
-        <a href='/book/{{book.id}}'>
+        <a href='/tech/{{tech.id}}'>
           <br />
-          {{book.title}}
+          {{tech.title}}
         </a>
 
       </h2>
 
       <p>
       
-    {{book.shortDescription}}
+    {{tech.shortDescription}}
       </p>
 
     </div>
 
       <div class='text-light'>
-      User: {{book.user.name}}
+      User: {{tech.user.name}}
 </div>
     <div class='bg-primary p-2'>
       <p>
 
-        {{format_date book.date_created}}
+        {{format_date tech.date_created}}
      
 
       </p>

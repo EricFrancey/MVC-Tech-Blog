@@ -1,12 +1,12 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#book-name').value.trim();
-  const shortDescription = document.querySelector('#book-desc').value.trim();
+  const title = document.querySelector('#tech-name').value.trim();
+  const shortDescription = document.querySelector('#tech-desc').value.trim();
 
 
   if (title && shortDescription) {
-    const response = await fetch(`/api/books`, {
+    const response = await fetch(`/api/techs`, {
       method: 'POST',
 
       body: JSON.stringify({ title, shortDescription }),
@@ -28,7 +28,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/books/${id}`, {
+    const response = await fetch(`/api/techs/${id}`, {
       method: 'DELETE',
     });
 
