@@ -1,3 +1,4 @@
+// Code courtesy of University of Toronto: School of Continuing Studies
 const path = require('path');
 const express = require('express');
 const session = require('express-session');

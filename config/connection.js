@@ -1,3 +1,4 @@
+// Code courtesy of University of Toronto: School of Continuing Studies
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

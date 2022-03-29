@@ -1,3 +1,4 @@
+// Code courtesy of University of Toronto: School of Continuing Studies
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
