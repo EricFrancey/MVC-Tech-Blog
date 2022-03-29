@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Tech, User, Comment } = require('../models');
+const { Book, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all tech and JOIN with user data
-    const techData = await Tech.findAll({
+    // Get all book and JOIN with user data
+    const bookData = await Book.findAll({
       include: [
         {
           model: User,
@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const techs = techData.map((tech) => tech.get({ plain: true }));
+    const books = bookData.map((book) => book.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      techs,
+      books,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -27,24 +27,24 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/tech/:id', async (req, res) => {
+router.get('/book/:id', async (req, res) => {
   try {
-    const techData = await Tech.findByPk(req.params.id, {
+    const bookData = await Book.findByPk(req.params.id, {
       include: [{ model: Comment }],
     });
 
-    const tech = techData.get({ plain: true });
+    const book = bookData.get({ plain: true });
 
     const userData = await User.findOne({
       where: {
-        id: tech.user_id,
+        id: book.user_id,
       },
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('tech', {
-      ...tech,
+    res.render('book', {
+      ...book,
       ...user,
       logged_in: req.session.logged_in,
     });
@@ -59,7 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Tech }],
+      include: [{ model: Book }],
     });
 
     const user = userData.get({ plain: true });

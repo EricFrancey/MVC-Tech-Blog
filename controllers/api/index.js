@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const techRoutes = require('./techRoutes');
+const bookRoutes = require('./bookRoutes');
 const commentRoutes = require('./commentRoutes');
 
 router.use('/users', userRoutes);
-router.use('/techs', techRoutes);
+router.use('/books', bookRoutes);
 router.use('/comments', commentRoutes);
 
 module.exports = router;

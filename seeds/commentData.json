@@ -2,49 +2,49 @@
   {
     "user_id": 1,
     "name": "Lisa",
-    "tech_id": 1,
+    "book_id": 1,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 2,
     "name": "Maggie",
-    "tech_id": 3,
+    "book_id": 3,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 3,
     "name": "Maggie",
-    "tech_id": 4,
+    "book_id": 4,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 1,
     "name": "Marge",
-    "tech_id": 2,
+    "book_id": 2,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 1,
     "name": "Homer",
-    "tech_id": 2,
+    "book_id": 2,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 2,
     "name": "Homer",
-    "tech_id": 4,
+    "book_id": 4,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 3,
     "name": "Bart",
-    "tech_id": 1,
+    "book_id": 1,
     "description": "Lorem ipsum dolor sit amet"
   },
   {
     "user_id": 1,
     "name": "Lisa",
-    "tech_id": 2,
+    "book_id": 2,
     "description": "Lorem ipsum dolor sit amet"
   }
 ]

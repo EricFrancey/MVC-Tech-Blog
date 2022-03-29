@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Tech } = require('../../models');
+const { Book } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newTech = await Tech.create({
+    const newBook = await Book.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newTech);
+    res.status(200).json(newBook);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,19 +17,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const techData = await Tech.destroy({
+    const bookData = await Book.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!techData) {
+    if (!bookData) {
       res.status(404).json({ message: 'Not found' });
       return;
     }
 
-    res.status(200).json(techData);
+    res.status(200).json(bookData);
   } catch (err) {
     res.status(500).json(err);
   }
